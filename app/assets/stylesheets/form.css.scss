@@ -1,0 +1,47 @@
+@mixin rounded-fields($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border: none;
+  height: 30px;
+  font-size: 13px;
+  padding: 0 5px;
+}
+
+.field {
+  padding: 10px 0;
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+
+  input {
+    @include rounded-fields(10px);
+  }
+
+  .field_with_errors {
+    input {
+      @include rounded-fields(10px);
+      border: solid 2px;
+      border-color: #8A1F11;
+      background: #FBE3E4;
+    }
+  }
+}
+
+#error_explanation {
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid;
+  background: #FBE3E4;
+  color: #8A1F11;
+  border-color: #FBC2C4;
+
+  h2 { 
+    height: 15px !important;
+    min-height: 15px !important;
+    font-size: 13px;
+    color: #8A1F11;
+  }
+}
