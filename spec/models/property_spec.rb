@@ -16,6 +16,26 @@ describe Property do
     Property.create!(@attr)  
   end
 
+  describe "options" do
+    before(:each) do
+      @property = Property.create(@attr)
+      @opt1 = @property.options.create(:name => "Garages", :value => "2")
+      @opt2 = @property.options.create(:name => "Pool", :value => "Yes")
+    end
+    it "should respond to options" do
+      @property.should respond_to(:options)
+    end
+    it "should have the right options" do
+      @property.options.should == [@opt1, @opt2]
+    end
+    it "should destroy the associated options" do
+      @property.destroy
+      [@opt1, @opt2].each do |opt|
+        PropertyOption.find_by_id(opt.id).should be_nil
+      end
+    end
+  end
+
   describe "validations" do
     it "should require an address" do
       no_address_property = Property.new(@attr.merge(:address => "    "))
