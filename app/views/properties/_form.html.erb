@@ -1,0 +1,30 @@
+<%= form_for @property do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div> 
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div> 
+  <div class="field">
+    <%= f.label :beds %><br />
+    <%= f.text_field :beds %>
+  </div> 
+  <div class="field">
+    <%= f.label :baths %><br />
+    <%= f.text_field :baths %>
+  </div> 
+  <div class="field">
+    <%= f.label :sqft %><br />
+    <%= f.text_field :sqft %>
+  </div> 
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div> 
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

@@ -1,17 +1,20 @@
 Moaz::Application.routes.draw do
-  match '/about', :to => 'pages#about'
+  resources :sessions, :only => [ :new, :create, :destroy ]
+  resources :users
+  resources :properties
+  resources :pictures
 
   root :to => 'pages#home'
 
   match '/signout', :to => 'sessions#destroy'
-
   match '/signin', :to => 'sessions#new'
-
   match '/signup', :to => 'users#new'
 
-  resources :sessions, :only => [ :new, :create, :destroy ]
+  match '/about', :to => 'pages#about'
 
-  resources :users
+
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

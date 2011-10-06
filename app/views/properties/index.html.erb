@@ -1,0 +1,21 @@
+<p class="new-action"><%= link_to "Add a new Property", new_property_path %></p>
+<% if @properties.count > 0 %>
+  <% for property in @properties %>
+  <div class="property">
+    <div class="preview">
+      <%= image_tag property.pictures.first.image_url(:thumb) if property.pictures.first.image? %>
+    </div>
+    <div class="short_info">
+      <h3><%= link_to property.address, property %></h3>
+      <ul>
+        <li>Price: <%= number_to_currency property.price, :precision => 0 %> | </li>
+        <li>Beds: <%= property.beds %> | </li>
+        <li>Baths: <%= number_with_precision property.baths, :precision => 1 %> | </li>
+        <li>Sqft: <%= number_with_delimiter property.sqft %></li>
+      </ul>
+    </div>
+  </div>
+  <% end %>
+<% else %>
+  <p>Sorry, there are currently no properties.</p>
+<% end %>

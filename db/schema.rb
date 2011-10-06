@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111005220412) do
+ActiveRecord::Schema.define(:version => 20111006180653) do
+
+  create_table "pictures", :force => true do |t|
+    t.integer  "property_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "properties", :force => true do |t|
     t.string   "address"
@@ -20,14 +27,6 @@ ActiveRecord::Schema.define(:version => 20111005220412) do
     t.decimal  "baths",       :precision => 10, :scale => 0
     t.integer  "sqft"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "property_options", :force => true do |t|
-    t.integer  "property_id"
-    t.string   "name"
-    t.text     "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
