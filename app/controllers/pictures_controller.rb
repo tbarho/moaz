@@ -1,5 +1,7 @@
 class PicturesController < ApplicationController
- def new
+  before_filter :authenticate_with_admin
+
+  def new
     @picture = Picture.new(:property_id => params[:property_id])
   end
 
