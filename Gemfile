@@ -5,7 +5,6 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
 gem 'execjs'
 gem 'therubyracer'
 
@@ -38,6 +37,7 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
+  gem 'mysql2'
   # Pretty printed test output
   gem 'turn', :require => false
   gem 'rspec'
@@ -46,6 +46,7 @@ group :test do
 end
 
 group :development do
+  gem 'mysql2'
   gem 'rspec-rails'
   gem 'webrat'
   gem 'ty-gen', :path => '/var/www/railsprojects/ty-gen'
