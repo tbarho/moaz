@@ -2,78 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.property {
-  clear: both;
+.border-bot {
+  margin-bottom: 20px;
+}
 
-  .preview {
-    float: left;    
-  }
+.text-1 {
+  margin-bottom: 5px;
+}
+.text-2 {
+  display: block;
+  margin-bottom: 75px;
+}
+ul.details {
 
-  .short_info {
+  li {
     float: left;
-    margin-left: 20px;
-
-    h3 {
-      margin: 20px 0 5px 0;
-
-      a {
-        text-decoration: none;
-      }
-    }
-
-    ul {
-      li {
-        float: left;
-        margin-right: 5px;
-      }
-    }
+    margin-right: 10px;
   }
-}
-
-h1 {
-  
-  font-size: 2em;
-  font-weight: bold;
-  line-height: 2em;
-
-  span {
-    float: right;
-    color: #fff;
-  }
-}
-
-.image-area {
-  width: 400px;
-  float: left;
-}
-
-.details-area {
-  width: 45%;
-  float: right;
-  font-size: 15px;
-
-  ul {
-    margin-top: 25px;
-    margin-bottom: 15px;
-    
-    li {
-    }
-  }
-  
-}
-
-#slides {
 }
 
 .slide-nav {
+  margin: 10px 0;
   text-align: center;
-  margin-bottom: 25px;
 }
 
-
 #pictures {
-
- clear: both;
+  clear: both;
   overflow: auto;
 
   .picture {

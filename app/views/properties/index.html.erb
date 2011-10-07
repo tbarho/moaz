@@ -1,21 +1,42 @@
-<p class="new-action"><%= link_to "Add a new Property", new_property_path %></p>
+<div class="col-1">
+<h1>
+  <strong>Our</strong> Properties 
+  <% if current_user && current_user.admin? %>
+  <span><%= link_to "Add Property", new_property_path, :class => "button" %></span>
+  <% end %>
+</h1>
 <% if @properties.count > 0 %>
   <% for property in @properties %>
-  <div class="property">
-    <div class="preview">
-      <%= image_tag property.pictures.first.image_url(:thumb) if property.pictures.first.image? %>
+    <div class="border-bot">
+    	<div class="wrapper">
+        <%= image_tag property.pictures.first.image_url(:thumb), :class => "img-indent" if property.pictures.first.image? %>
+    		<p class="text-1">
+          <%= link_to short_address(property.address), property %>
+        </p>
+    		<span class="text-2">
+          <ul class="details">
+            <li>Price: <%= number_to_currency property.price, :precision => 0 %> | </li>
+            <li>Beds: <%= property.beds %> | </li>
+            <li>Baths: <%= number_with_precision property.baths, :precision => 1 %> | </li>
+            <li>Sqft: <%= number_with_delimiter property.sqft %></li>
+          </ul>
+        </span>
+    		<div class="alignright">
+          <%= link_to "View", property, :class => "button" %>
+        </div>
+    	</div>
     </div>
-    <div class="short_info">
-      <h3><%= link_to property.address, property %></h3>
-      <ul>
-        <li>Price: <%= number_to_currency property.price, :precision => 0 %> | </li>
-        <li>Beds: <%= property.beds %> | </li>
-        <li>Baths: <%= number_with_precision property.baths, :precision => 1 %> | </li>
-        <li>Sqft: <%= number_with_delimiter property.sqft %></li>
-      </ul>
-    </div>
-  </div>
   <% end %>
 <% else %>
-  <p>Sorry, there are currently no properties.</p>
+<p class="reg color-1">Sorry, there are currently no properties.<p>
 <% end %>
+</div>
+<div class="col-2">
+<h3>
+	<strong>Our</strong> Standards
+</h3>
+<p>
+	<span class="reg color-1">Some sample text here</span><br />
+  With some content that might seems pertinent to what Moazami Homes is all about.
+</p>
+</div>

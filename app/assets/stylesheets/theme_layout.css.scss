@@ -1,0 +1,42 @@
+/*======= index.html =======*/
+.col-1 {width:495px; margin-right:34px;}
+.col-2 {width:245px;}
+
+.col-1 .col-1 {width:188px; margin-right:58px; padding-bottom:8px;}
+.col-1 .col-2 {width:188px; margin-right:58px; padding-bottom:8px;}
+.col-1 .col-3 {width:198px; padding-bottom:8px;}
+
+/*======= index-1.html =======*/
+#page2 #content .col-1 {width:495px; margin-right:34px;}
+#page2 #content .col-2 {width:245px;}
+
+/*======= index-2.html =======*/
+#page3 #content .col-1 {width:245px; margin-right:34px;}
+#page3 #content .col-2 {width:498px;}
+
+/*======= index-3.html =======*/
+#page4 #content .col-1 {width:531px; margin-right:16px;}
+#page4 #content .col-2 {width:226px;}
+
+#page4 #content .col-2 .col-1 {width:105px; margin-right:16px;}
+#page4 #content .col-2 .col-2 {width:105px;}
+
+/*======= index-4.html =======*/
+#page5 #content .col-1 {width:495px; margin-right:34px;}
+#page5 #content .col-2 {width:245px;}
+
+#page5 #content .col-1 .col-1 {width:225px; margin-right:36px;}
+#page5 #content .col-1 .col-2 {width:225px;}
+
+/*======= index-5.html =======*/
+#page6 #content .col-1 {width:245px; margin-right:34px;}
+#page6 #content .col-2 {width:498px;}
+
+.col-X {width: 760px;}
+
+
+.productList {}
+.productList li { overflow: auto; margin-bottom: 35px; }
+.productList a.link { float: left; }
+.productList .details { float: left; width: 600px; margin-left: 15px; }
+.productList .details h3 span { float: right; }
