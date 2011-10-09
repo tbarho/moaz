@@ -1,8 +1,8 @@
-<%= javascript_include_tag "http://malsup.github.com/jquery.easing.1.3.js" %>
+<%= javascript_include_tag "http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js" %>
 <p>
   <%= link_to "&laquo; Back to properties".html_safe, properties_path %> 
 </p>
-<h1 class="border-bot"><%= @property.address %> <span><%= number_to_currency @property.price, :precision => 0 %></span></h1>
+<h1 class="border-bot"><%= @property.address %> <span><strong><%= number_to_currency @property.price, :precision => 0 %></strong></span></h1>
 <% if current_user && current_user.admin? %>
 <div class="border-bot">
   <%= link_to "Add a Picture", new_picture_path(:property_id => @property), :class => "button" %> 
@@ -53,6 +53,16 @@
   <p><%= @property.description %></p>
   <h3 class="border-bot">Listing Info for <strong><%= short_address(@property.address) %></strong></h3>
   <h3 class="border-bot">Map to <strong><%= short_address(@property.address) %></strong></h3>
+  <div id="map" style="width: 100%; height: 300px;"></div>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#map").gmap3({
+        action: 'addMarker',
+        address: "<%= @property.address %>",
+        map:{center:true, zoom:15}
+      });
+    });
+  </script>
   <p>
     <%= link_to "&laquo; Back to properties".html_safe, properties_path %> 
   </p>

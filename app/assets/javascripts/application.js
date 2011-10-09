@@ -6,4 +6,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require gmap3.min
+//= require jquery.cycle.all
+//= require properties
