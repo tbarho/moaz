@@ -12,7 +12,11 @@
       		<a href="#">FAQ's</a>
       	</li>
       	<li>
-      		<a href="#" class="last-item">RSS</a>
+          <% if signed_in? %>
+          <%= link_to "Sign Out", signout_path, :class => 'last-item' %>
+          <% else %>
+          <%= link_to "Sign In", signin_path, :class => 'last-item' %>
+          <% end %>
       	</li>
       </ul>
 		</div>
@@ -21,22 +25,10 @@
   	<div class="wrapper">
   		<ul class="menu">
   			<li>
-  				<a href="index.html">Home</a>
+          <%= link_to "Home", root_path %>
   			</li>
   			<li>
-  				<a href="#" class="active">About Us</a>
-  			</li>
-  			<li>
-  				<a href="#">Services</a>
-  			</li>
-  			<li>
-  				<a href="#">Gallery</a>
-  			</li>
-  			<li>
-  				<a href="#">Links</a>
-  			</li>
-  			<li>
-  				<a href="#">Contacts</a>
+          <%= link_to "Properties", properties_path %>
   			</li>
   		</ul>
   	</div>
