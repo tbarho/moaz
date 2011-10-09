@@ -10,7 +10,7 @@
   <%= link_to "Remove Property", @property, :confirm => "Are you sure?", :method => :delete, :class => "button" %> 
 </div>
 <% end %>
-<div class="col-1">
+<div class="col-1 indent-bot">
   <% if @property.pictures.count > 0 %>
     <% if current_user && current_user.admin? %>
       <div id="pictures">
