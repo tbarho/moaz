@@ -9,7 +9,9 @@
   <% for property in @properties %>
     <div class="border-bot">
     	<div class="wrapper">
+        <% if property.pictures.count > 0 %>
         <%= image_tag property.pictures.first.image_url(:thumb), :class => "img-indent" if property.pictures.first.image? %>
+        <% end %>
     		<p class="text-1">
           <%= link_to short_address(property.address), property %>
         </p>

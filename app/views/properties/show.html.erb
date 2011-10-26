@@ -6,6 +6,7 @@
 <% if current_user && current_user.admin? %>
 <div class="border-bot">
   <%= link_to "Add a Picture", new_picture_path(:property_id => @property), :class => "button" %> 
+  <%= link_to "Add an Option", new_option_path(:property_id => @property), :class => "button" %> 
   <%= link_to "Edit Property", edit_property_path(@property), :class => "button"  %>
   <%= link_to "Remove Property", @property, :confirm => "Are you sure?", :method => :delete, :class => "button" %> 
 </div>
@@ -51,7 +52,19 @@
 <div style="clear: both"></div>
 <div class="col-X">
   <p><%= @property.description %></p>
+  <% if @property.options %>
   <h3 class="border-bot">Listing Info for <strong><%= short_address(@property.address) %></strong></h3>
+  <ul class="list-1 condensed indent-bot">
+    <% @property.options.each do |option| %>
+      <li>
+        <%= option.name %>: <%= option.value %>
+        <% if current_user && current_user.admin? %>
+          <%= link_to "remove", option, :confirm => 'Are you sure?', :method => :delete %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <% end %>
   <h3 class="border-bot">Map to <strong><%= short_address(@property.address) %></strong></h3>
   <div id="map" style="width: 100%; height: 300px;"></div>
   <script type="text/javascript">

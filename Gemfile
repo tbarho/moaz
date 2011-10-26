@@ -11,6 +11,7 @@ gem 'therubyracer'
 # For file uploads
 gem 'rmagick'
 gem 'carrierwave'
+gem 'fog'
 gem 'nested_form', :git => "git://github.com/ryanb/nested_form.git" 
 
 group :production do

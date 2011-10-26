@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111007163613) do
+ActiveRecord::Schema.define(:version => 20111026160056) do
+
+  create_table "options", :force => true do |t|
+    t.integer  "property_id"
+    t.string   "name"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pictures", :force => true do |t|
     t.integer  "property_id"
@@ -39,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20111007163613) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",              :default => false
+    t.integer  "roles_mask"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

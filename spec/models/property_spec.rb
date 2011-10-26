@@ -36,6 +36,19 @@ describe Property do
     end
   end
 
+  describe "pictures" do
+    before(:each) do
+      @property = Property.create(@attr)
+      # Create some pictures
+    end
+
+    it "should respond to pictures"  do
+      @property.should respond_to(:pictures)
+    end
+
+    # test pictures
+  end
+
   describe "validations" do
     it "should require an address" do
       no_address_property = Property.new(@attr.merge(:address => "    "))

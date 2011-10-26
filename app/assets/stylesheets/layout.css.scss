@@ -210,6 +210,11 @@ h3 strong {color:#fff; font-weight: normal;}
 .list-1 li a {color:#fff;}
 .list-1 li a:hover {color:#98be07;}
 .list-1 .last-item {background:none;}
+.list-1.condensed { display:block }
+.list-1.condensed:after { clear: both; content: "."; display:block; height: 0; visibility: hidden; }
+.list-1.condensed li { float: left; width: 230px; }
+
+
 
 .list-2 li {line-height:22px; padding-left:12px; background: image_url('marker-2.gif') 0 8px no-repeat;}
 .list-2 li a {color:#fff;}
