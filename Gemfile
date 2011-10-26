@@ -5,17 +5,14 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'execjs'
-gem 'therubyracer'
 
 # For file uploads
 gem 'rmagick'
 gem 'carrierwave'
 gem 'fog'
-gem 'nested_form', :git => "git://github.com/ryanb/nested_form.git" 
+gem 'thin'
 
 group :production do
-  gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
   gem 'pg'
 end
 # Gems used only for assets and not required
@@ -44,6 +41,7 @@ group :test do
   gem 'rspec'
   gem 'webrat'
   gem 'factory_girl_rails'
+  gem 'therubyracer'
 end
 
 group :development do
@@ -51,4 +49,5 @@ group :development do
   gem 'rspec-rails'
   gem 'webrat'
   gem 'ty-gen', :path => '/var/www/railsprojects/ty-gen'
+  gem 'therubyracer'
 end
