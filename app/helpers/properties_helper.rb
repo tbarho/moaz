@@ -1,5 +1,9 @@
 module PropertiesHelper
   def short_address(address)
-    address.slice(0, address.index(','))
+    if !address.index(',').nil?
+      address.slice(0, address.index(','))
+    else
+      address
+    end
   end
 end
