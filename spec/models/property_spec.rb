@@ -42,7 +42,7 @@ describe Property do
       # Create some pictures
     end
 
-    it "should respond to pictures"  do
+    it "should respond to pictures" do
       @property.should respond_to(:pictures)
     end
 

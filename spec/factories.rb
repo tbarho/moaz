@@ -1,19 +1,24 @@
-Factory.define :user do |user|
-  user.name                   "Sample User"
-  user.email                  "sample@example.com"
-  user.password               "samplepass"
-  user.password_confirmation  "samplepass"
+FactoryGirl.define do
+  factory :user do
+    sequence(:name) { |n| "Test User #{n}" } 
+    sequence(:name) { |n| "testuser#{n}@example.com" }
+    password "secret"
+    password_confirmation "secret"
+    admin false
+
+    factory :admin do
+      admin true
+    end 
+  end
+
+  factory :property do
+    sequence(:address) { "300#{n} Gabriel View Drive" }
+    price "500000.00"
+    beds "4"
+    baths "2.5"
+    sqft "2500"
+    description "Beautiful home located on of the premier streets in Georgetown, TX." 
+  end
+  
 end
 
-Factory.sequence :email do |n|
-  "person-#{n}@example.com"
-end
-
-Factory.define :property do |property|
-  property.address "3005 Gabriel View Drive"
-  property.price 292000.00
-  property.beds 4
-  property.baths 2.5
-  property.sqft 2450
-  property.description "Beautiful home located on one of the premier streets in Georgetown, TX.  4 car garage and guest suite or office detached from house.  Recently remodeled!"
-end
