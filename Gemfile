@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -24,6 +24,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'haml'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -38,16 +39,14 @@ group :test do
   gem 'mysql2'
   # Pretty printed test output
   gem 'turn', :require => false
-  gem 'rspec'
-  gem 'webrat'
+  gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'therubyracer'
+  gem 'capybara'
 end
 
 group :development do
   gem 'mysql2'
-  gem 'rspec-rails'
-  gem 'webrat'
-  gem 'ty-gen', :path => '/var/www/railsprojects/ty-gen'
   gem 'therubyracer'
+  gem 'rspec-rails'
+  gem 'ty-gen', :path => '/var/www/railsprojects/ty-gen'
 end

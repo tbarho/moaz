@@ -31,7 +31,7 @@ describe Property do
     it "should destroy the associated options" do
       @property.destroy
       [@opt1, @opt2].each do |opt|
-        PropertyOption.find_by_id(opt.id).should be_nil
+        Option.find_by_id(opt.id).should be_nil
       end
     end
   end
