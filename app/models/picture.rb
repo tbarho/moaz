@@ -1,5 +1,9 @@
 class Picture < ActiveRecord::Base
-  attr_accessible :property_id, :image
-  belongs_to :property
+  acts_as_list
+
+  attr_accessible :image
+  belongs_to :imageable, :polymorphic => true
   mount_uploader :image, ImageUploader
+
+  default_scope :order => "pictures.position ASC"
 end

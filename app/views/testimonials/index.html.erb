@@ -1,0 +1,20 @@
+<h1>
+  <strong>What</strong> People Say
+  <% if current_user && current_user.admin? %>
+  <span><%= link_to "Add Testimonial", new_testimonial_path, :class => "button" %></span>
+  <% end %>
+</h1>
+<ul>
+<% for testimonial in @testimonials %>
+  <div class="border-bot">
+    <p class="text-1">
+      <%= testimonial.person %> says . . . 
+    </p>
+    <p> about <%= testimonial.address %><br /><%= testimonial.content %></p>
+    <% if current_user && current_user.admin? %>
+    <span><%= link_to "Edit", edit_testimonial_path(testimonial), :class => "button" %></span>
+    <span><%= link_to "Remove", testimonial, :confirm => "Are you sure?", :method => :delete, :class => "button" %></span>
+    <% end %>
+  </div>
+<% end %>
+</ul>

@@ -15,8 +15,8 @@ describe "Properties" do
       end
       
       it "should show a list of properties with links to view details" do
-        page.should have_selector("a[href=\"/properties/#{property1.address}\"]")
-        page.should have_selector("a[href=\"/properties/#{property2.address}\"]")
+        page.should have_selector("a[href=\"/properties/#{property1.address.parameterize}\"]")
+        page.should have_selector("a[href=\"/properties/#{property2.address.parameterize}\"]")
       end
       it "should show a picture for each property"
       it "should show the neighboorhood for each property"

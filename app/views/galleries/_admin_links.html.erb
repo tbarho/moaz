@@ -1,0 +1,7 @@
+<% if current_user && current_user.admin? %>
+<div class="border-bot">
+  <%= link_to "Add a Picture", new_gallery_picture_path(@gallery), :class => "button" %> 
+  <%= link_to "Edit Portfolio", edit_gallery_path(@gallery), :class => "button"  %>
+  <%= link_to "Remove Portfolio", @gallery, :confirm => "Are you sure?", :method => :delete, :class => "button" %> 
+</div>
+<% end %>

@@ -1,0 +1,27 @@
+  <% if @gallery.pictures.count > 0 %>
+    <% if current_user && current_user.admin? %>
+      <ul id="pictures" data-update-url="<%= sort_gallery_pictures_path(@gallery) %>">
+        <% @gallery.pictures.each do |picture| %>
+          <%= content_tag_for :li, picture do %>
+              <%= image_tag picture.image_url(:small_thumb) if picture.image? %>
+              <div class="actions">
+                <%= link_to "edit", edit_gallery_picture_path(@gallery, picture) %> |
+                <%= link_to "remove", gallery_picture_path(@gallery, picture), :confirm => 'Are you sure?', :method => :delete %>
+              </div>
+          <% end %>
+        <% end %>
+      </ul>
+    <% else %>
+      <div id="slides">
+        <% for picture in @gallery.pictures %>
+          <%= image_tag picture.image_url(:large) if picture.image? %>
+        <% end %>
+      </div>
+      <% if @gallery.pictures.count > 1 %>
+      <div class="slide-nav">
+        <a id="prev" href="#">Prev</a> | 
+        <a id="next" href="#">Next</a>
+      </div>
+      <% end %>
+    <% end %>
+  <% end %>

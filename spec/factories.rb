@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user do
     sequence(:name) { |n| "Test User #{n}" } 
-    sequence(:name) { |n| "testuser#{n}@example.com" }
+    sequence(:email) { |n| "testuser#{n}@example.com" }
     password "secret"
     password_confirmation "secret"
     admin false
@@ -12,7 +12,7 @@ FactoryGirl.define do
   end
 
   factory :property do
-    sequence(:address) { "300#{n} Gabriel View Drive" }
+    sequence(:address) { |n| "300#{n} Gabriel View Drive" }
     price "500000.00"
     beds "4"
     baths "2.5"

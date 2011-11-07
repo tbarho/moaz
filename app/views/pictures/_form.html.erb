@@ -1,6 +1,5 @@
-<%= form_for @picture, :html => {:multipart => true} do |f| %>
+<%= form_for [@imageable, Picture.new], :html => {:multipart => true} do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
-  <%= f.hidden_field :property_id %>
   <p>
     <%= f.file_field :image %>
   </p>

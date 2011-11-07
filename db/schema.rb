@@ -11,30 +11,50 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111026160056) do
+ActiveRecord::Schema.define(:version => 20111107032419) do
+
+  create_table "galleries", :force => true do |t|
+    t.string   "title"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
 
   create_table "options", :force => true do |t|
     t.integer  "property_id"
-    t.string   "name"
-    t.string   "value"
+    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "pictures", :force => true do |t|
-    t.integer  "property_id"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "properties", :force => true do |t|
     t.string   "address"
-    t.decimal  "price",       :precision => 10, :scale => 0
+    t.decimal  "price",        :precision => 10, :scale => 0
     t.integer  "beds"
-    t.decimal  "baths",       :precision => 10, :scale => 0
+    t.decimal  "baths",        :precision => 10, :scale => 0
     t.integer  "sqft"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+    t.string   "neighborhood"
+  end
+
+  create_table "testimonials", :force => true do |t|
+    t.string   "person"
+    t.string   "address"
+    t.text     "content"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

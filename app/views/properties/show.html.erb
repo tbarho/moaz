@@ -3,42 +3,9 @@
   <%= link_to "&laquo; Back to properties".html_safe, properties_path %> 
 </p>
 <h1 class="border-bot"><%= @property.address %> <span><strong><%= number_to_currency @property.price, :precision => 0 %></strong></span></h1>
-<% if current_user && current_user.admin? %>
-<div class="border-bot">
-  <%= link_to "Add a Picture", new_picture_path(:property_id => @property), :class => "button" %> 
-  <%= link_to "Add an Option", new_option_path(:property_id => @property), :class => "button" %> 
-  <%= link_to "Edit Property", edit_property_path(@property), :class => "button"  %>
-  <%= link_to "Remove Property", @property, :confirm => "Are you sure?", :method => :delete, :class => "button" %> 
-</div>
-<% end %>
+<%= render :partial => "admin_links" %>
 <div class="col-1 indent-bot">
-  <% if @property.pictures.count > 0 %>
-    <% if current_user && current_user.admin? %>
-      <div id="pictures">
-        <% for picture in @property.pictures %>
-          <div class="picture">
-            <%= image_tag picture.image_url(:small_thumb) if picture.image? %>
-            <div class="actions">
-              <%= link_to "edit", edit_picture_path(picture) %> |
-              <%= link_to "remove", picture, :confirm => 'Are you sure?', :method => :delete %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% else %>
-      <div id="slides">
-        <% for picture in @property.pictures %>
-          <%= image_tag picture.image_url(:large) if picture.image? %>
-        <% end %>
-      </div>
-      <% if @property.pictures.count > 1 %>
-      <div class="slide-nav">
-        <a id="prev" href="#">Prev</a> | 
-        <a id="next" href="#">Next</a>
-      </div>
-      <% end %>
-    <% end %>
-  <% end %>
+<%= render :partial => "pictures" %>
 </div>
 <div class="col-2">
   <h3>Property <strong>Details</strong></h3>
@@ -47,6 +14,7 @@
   	<li>Beds: <%= @property.beds %></li>
   	<li>Baths: <%= number_with_precision @property.baths, :precision => 1 %></li>
   	<li>Sqft: <%= number_with_delimiter @property.sqft %></li>
+  	<li><%= @property.neighborhood %></li>
   </ul>
 </div>
 <div style="clear: both"></div>
@@ -57,9 +25,9 @@
   <ul class="list-1 condensed indent-bot">
     <% @property.options.each do |option| %>
       <li>
-        <%= option.name %>: <%= option.value %>
+        <%= option.content %>
         <% if current_user && current_user.admin? %>
-          <%= link_to "remove", option, :confirm => 'Are you sure?', :method => :delete %>
+          <%= link_to "remove", property_option_path(@property, option), :confirm => 'Are you sure?', :method => :delete %>
         <% end %>
       </li>
     <% end %>

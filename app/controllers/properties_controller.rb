@@ -6,7 +6,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @property = Property.find(params[:id])
+    @property = Property.find_by_slug(params[:id])
   end
 
   def new
@@ -24,11 +24,11 @@ class PropertiesController < ApplicationController
   end
 
   def edit
-    @property = Property.find(params[:id])
+    @property = Property.find_by_slug(params[:id])
   end
 
   def update
-    @property = Property.find(params[:id])
+    @property = Property.find_by_slug(params[:id])
     if @property.update_attributes(params[:property])
       flash[:notice] = "Successfully updated property."
       redirect_to property_url
@@ -38,7 +38,7 @@ class PropertiesController < ApplicationController
   end
 
   def destroy
-    @property = Property.find(params[:id])
+    @property = Property.find_by_slug(params[:id])
     @property.destroy
     flash[:notice] = "Successfully destroyed property."
     redirect_to properties_url

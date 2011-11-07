@@ -16,6 +16,7 @@
           <%= link_to short_address(property.address), property %>
         </p>
     		<span class="text-2">
+          <strong><%= property.neighborhood %></strong>
           <ul class="details">
             <li>Price: <%= number_to_currency property.price, :precision => 0 %> | </li>
             <li>Beds: <%= property.beds %> | </li>

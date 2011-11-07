@@ -11,6 +11,7 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'fog'
 gem 'thin'
+gem 'acts_as_list'
 
 group :production do
   gem 'pg'

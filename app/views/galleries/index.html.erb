@@ -1,0 +1,20 @@
+	<h1>
+		<strong>Our</strong> Work
+    <% if current_user && current_user.admin? %>
+    <span><%= link_to "New Portfolio", new_gallery_path, :class => "button" %></span>
+    <% end %>
+	</h1>
+  <% if @galleries.count > 0 %>
+    <% @galleries.each do |gallery| %>
+      <div class="border-bot">
+        <div class="wrapper">
+          <% if gallery.pictures.count > 0 %>
+          <%= image_tag gallery.pictures.first.image_url(:thumb), :class => "img-indent" if gallery.pictures.first.image? %>
+          <% end %>
+          <p class="text-1">
+            <%= link_to gallery.title, gallery %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>

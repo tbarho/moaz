@@ -1,0 +1,8 @@
+<p>
+  <%= link_to "&laquo; Back to portfolio".html_safe, galleries_path %> 
+</p>
+<h1 class="border-bot"><%= @gallery.title %></h1>
+<%= render :partial => "admin_links" %>
+<div class="col-1 indent-bot">
+<%= render :partial => "pictures" %>
+</div>

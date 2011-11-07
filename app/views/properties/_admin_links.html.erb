@@ -1,0 +1,8 @@
+<% if current_user && current_user.admin? %>
+<div class="border-bot">
+  <%= link_to "Add a Picture", new_property_picture_path(@property), :class => "button" %> 
+  <%= link_to "Add an Option", new_property_option_path(@property), :class => "button" %> 
+  <%= link_to "Edit Property", edit_property_path(@property), :class => "button"  %>
+  <%= link_to "Remove Property", @property, :confirm => "Are you sure?", :method => :delete, :class => "button" %> 
+</div>
+<% end %>

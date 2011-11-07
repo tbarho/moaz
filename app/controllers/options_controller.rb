@@ -1,11 +1,13 @@
 class OptionsController < ApplicationController
   before_filter :authenticate_with_admin
   def new
-    @option = Option.new(:property_id => params[:property_id])    
+    @property = Property.find_by_slug(params[:property_id])
+    @option = @property.options.new   
   end
 
   def create
-    @option = Option.new(params[:option])
+    @property = Property.find_by_slug(params[:property_id])
+    @option = @property.options.create(params[:option])
     if @option.save
       flash[:notice] = "Successfully created option."
       redirect_to @option.property
@@ -15,8 +17,8 @@ class OptionsController < ApplicationController
   end
 
   def destroy
+    @property = Property.find_by_slug(params[:property_id])
     @option = Option.find(params[:id])
-    @property = @option.property
     @option.destroy
     flash[:notice] = "Successfully destroyed option."
     redirect_to @property
