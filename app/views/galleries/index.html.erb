@@ -11,9 +11,9 @@
           <% if gallery.pictures.count > 0 %>
           <%= image_tag gallery.pictures.first.image_url(:thumb), :class => "img-indent" if gallery.pictures.first.image? %>
           <% end %>
-          <p class="text-1">
+          <h3 class="text-1">
             <%= link_to gallery.title, gallery %>
-          </p>
+          </h3>
         </div>
       </div>
     <% end %>

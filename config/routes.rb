@@ -1,5 +1,7 @@
 Moaz::Application.routes.draw do
 
+  resources :posts
+
   resources :sessions, :only => [ :new, :create, :destroy ]
   resources :users
   resources :testimonials, :except => [:show]

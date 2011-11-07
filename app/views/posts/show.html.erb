@@ -1,0 +1,12 @@
+<h1><%= @post.title %></h1>
+<p>
+  <%= @post.user.name %>
+</p>
+<p>
+  <%= raw @post.body %>
+</p>
+
+<% if current_user && current_user.admin? %>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
+<%= link_to 'Back', posts_path %>
