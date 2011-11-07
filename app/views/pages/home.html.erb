@@ -1,2 +1,25 @@
-<h2>Home</h2>
-<p>This is the <b>Home</b> page.</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?sensor=false" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="page1">
+<div class="bg">
+	<div class="main">
+
+    <%= render 'layouts/header' %>
+  
+    <div class="content home">
+     <span><%= link_to "View Our Properties", properties_path, :class => "button-large" %></span> 
+    </div>
+
+    <%= render 'layouts/footer' %>
+
+  </div>
+</div>
+</body>
+</html>

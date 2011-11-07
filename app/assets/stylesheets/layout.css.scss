@@ -1,3 +1,21 @@
+@mixin radius($radius: 5px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+@mixin shadow($color: #CCC, $values: 1px 1px 4px) {
+  box-shadow: $color $values;
+  -moz-box-shadow: $color $values;
+  -webkit-box-shadow: $color $values;
+}
+@mixin gradient($top, $bottom) {
+  background-image: -moz-linear-gradient(top, $top, $bottom);
+  background-image: -webkit-linear-gradient($top, $top, $bottom, $bottom);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$top, EndColorStr=$bottom);
+}
+
+
+
 * {margin:0; padding:0;}
 
 html {width:100%; background:#151515;}
@@ -33,6 +51,28 @@ ul {list-style:none;}
 table, table td {padding:0; border:none; border-collapse:collapse;}
 
 .clear {clear:both; width:100%; line-height:0; font-size:0;}
+
+.content.home {
+  min-height: 620px;
+  height: 620px;
+
+  span {
+    float: right;
+    margin-top: 30px;
+    a.button-large {
+      color: #9E6C00;
+      @include radius(10px);
+      @include gradient(#FFEF45, #EDA202);
+      @include shadow(#000, 1px 2px 15px);
+      border: solid 1px #fff;
+      font-size: 18px;
+      font-weight: bold;
+      font-style: italic;
+      padding: 20px 60px;
+      text-decoration: none;      
+    }
+  
+} }
 
 .col-1, .col-2, .col-3, .col-4 {float:left;}
 .column-1, .column-2, .column-3 {float:left;}  
