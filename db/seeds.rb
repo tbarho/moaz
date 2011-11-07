@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Property.find_or_create_by_address([
+Property.create([
   {
     :address => "3005 Gabriel View Drive, Georgetown, TX 78628",
     :price => 365000,
@@ -27,7 +27,7 @@ Property.find_or_create_by_address([
   }
 ])
 
-Testimonial.find_or_create_by_person([
+Testimonial.create([
   {
     :person => "Jane Doe",
     :address => "1234 My Street",
