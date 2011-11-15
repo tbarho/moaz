@@ -25,12 +25,14 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
-    @post = current_user.posts.new
+    count = current_user.posts.size + 1
+    new_post = current_user.posts.create!(:title => "New Post #{count}", :body => "Put your post content here ...")
+    redirect_to "/editor" + post_path(new_post)
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @post }
-    end
+    #respond_to do |format|
+    #  format.html # new.html.erb
+    #  format.json { render json: @post }
+    #end
   end
 
   # GET /posts/1/edit
@@ -82,4 +84,13 @@ class PostsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def mercury_update
+    post = Post.find(params[:id])
+    post.title = params[:content][:post_title][:value]    
+    post.body = params[:content][:post_body][:value]    
+    post.save!
+    render text: ""
+  end
+
 end

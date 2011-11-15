@@ -1,3 +1,11 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+  overflow: visible !important;
+}
+
+span { float: none !important; display: inline-block; } 
+h1 { overflow: visible !important }
+#post_body { margin: 20px 0; }

@@ -12,6 +12,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'thin'
 gem 'acts_as_list'
+gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
 
 group :production do
   gem 'pg'

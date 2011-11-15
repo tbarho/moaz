@@ -9,7 +9,7 @@
     <div class="border-bot">
     	<div class="wrapper">
         <% if property.pictures.count > 0 %>
-        <%= image_tag property.pictures.first.image_url(:thumb), :class => "img-indent" if property.pictures.first.image? %>
+        <%= link_to first_thumb_link(property.pictures), property %>
         <% end %>
     		<h3 class="text-1">
           <%= link_to short_address(property.address), property %>

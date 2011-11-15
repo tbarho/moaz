@@ -1,3 +1,31 @@
 // Place all the styles related to the galleries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#gallery {
+  float: left;
+  margin: 0 35px 10px 0;
+
+  .image {
+    border: solid 2px #fff;
+    float: left;
+    margin-bottom: 10px;
+    
+    img {
+     margin: 10px;
+    }
+  } 
+
+  h3 {
+    margin: 5px;
+    text-align: center;
+  }
+}
+
+#gallery-pics {
+  text-align: center;
+
+  #slides {
+    display: inline-block;
+  }
+}

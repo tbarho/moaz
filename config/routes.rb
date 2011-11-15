@@ -1,6 +1,13 @@
 Moaz::Application.routes.draw do
+  
+  match '/editor(/*requested_uri)' => 'mercury_auth#edit', :as => :mercury_editor
 
-  resources :posts
+  Mercury::Engine.routes
+
+  resources :posts do
+    member { post :mercury_update }
+  end
+
 
   resources :sessions, :only => [ :new, :create, :destroy ]
   resources :users
