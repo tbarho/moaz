@@ -413,6 +413,15 @@ window.Mercury = {
   // place to add or change functionality.
   onload: function() {
     //Mercury.PageEditor.prototype.iframeSrc = function(url) { return '/testing'; }
+    $(window).bind('mercury:ready', function() {
+      var link = $('#mercury_iframe').contents().find('#edit_link');
+      Mercury.saveURL = link.data('save-url');
+      link.hide();
+    });
+
+    $(window).bind('mercury:saved', function() {
+      window.location = "/posts";
+    }); 
   }
 
 };
