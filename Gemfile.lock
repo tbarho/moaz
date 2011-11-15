@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jejacks0n/mercury.git
-  revision: 72369797fa99436848be9dc44ca8ca77a6df7e94
+  revision: 12abd0d8fff19f395815933be5d98b1af0c9ddaa
   specs:
     mercury-rails (0.2.3)
       coffee-script

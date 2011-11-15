@@ -372,6 +372,16 @@ window.Mercury = {
     regionClass: 'mercury-region',
 
     
+    // ## Region Data Attributes
+    //
+    // These attributes, when applied to a Mercury region element, will be automatically serialized and submitted
+    // with the AJAX request sent when a page is saved. These are expected to be HTML5 data attributes, and 'data-'
+    // will automatically be prepended to each attribute listed here.
+    //
+    // Example: regionDataAttributes: ['scope', 'version']
+    regionDataAttributes: [],
+    
+    
     // ## Styles
     //
     // Mercury tries to stay as much out of your code as possible, but because regions appear within your document we
@@ -403,15 +413,6 @@ window.Mercury = {
   // place to add or change functionality.
   onload: function() {
     //Mercury.PageEditor.prototype.iframeSrc = function(url) { return '/testing'; }
-    $(window).bind('mercury:ready', function() {
-      var link = $('#mercury_iframe').contents().find('#edit_link');
-      Mercury.saveURL = link.data('save-url');
-      link.hide();
-    });
-
-    $(window).bind('mercury:saved', function() {
-      window.location = '/posts';
-    }); 
   }
 
 };

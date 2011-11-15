@@ -29,3 +29,22 @@
     display: inline-block;
   }
 }
+
+#pictures {
+  clear: both;
+  overflow: auto;
+
+  .picture {
+    border: solid 1px #CCC;
+    padding: 10px 10px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    .actions {
+      font-size: 10px;
+      text-align: center;
+      color: #777;
+    }
+  }
+}
