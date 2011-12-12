@@ -31,7 +31,7 @@ class PropertiesController < ApplicationController
     @property = Property.find_by_slug(params[:id])
     if @property.update_attributes(params[:property])
       flash[:notice] = "Successfully updated property."
-      redirect_to property_url
+      redirect_to @property
     else
       render :action => "edit"
     end
