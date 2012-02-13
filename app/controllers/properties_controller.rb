@@ -2,7 +2,7 @@ class PropertiesController < ApplicationController
   before_filter :authenticate_with_admin, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
-    @properties = Property.all
+    @properties = Property.order("status ASC")
   end
 
   def show
