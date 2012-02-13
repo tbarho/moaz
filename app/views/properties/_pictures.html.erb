@@ -14,7 +14,9 @@
     <% else %>
       <div id="slides">
         <% for picture in @property.pictures %>
+          <a href="<%= picture.image_url %>">
           <%= image_tag picture.image_url(:large) if picture.image? %>
+          </a>
         <% end %>
       </div>
       <% if @property.pictures.count > 1 %>

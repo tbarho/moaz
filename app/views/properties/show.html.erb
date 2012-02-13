@@ -11,6 +11,8 @@
   <%= javascript_include_tag 'cycle' %>
   <%= javascript_include_tag 'gmap3.min' %>
   <%= javascript_include_tag 'properties' %>
+  <%= javascript_include_tag "FancyZoomHTML" %>
+  <%= javascript_include_tag "FancyZoom" %>
 <% end %>
 
 <p>
@@ -22,7 +24,7 @@
 <%= render :partial => "pictures" %>
 </div>
 <div class="col-2">
-  <h3>Property <strong>Details</strong></h3>
+  <h3>Property <strong>Details</strong><%= " - #{@property.status.titleize}" unless @property.status.nil? %></h3>
   <ul class="list-1 indent-bot">
   	<li>Price: <%= number_to_currency @property.price, :precision => 0 %></li>
   	<li>Beds: <%= @property.beds %></li>

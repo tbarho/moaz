@@ -16,7 +16,7 @@
         <%= link_to first_thumb_link(property.pictures), property %>
         <% end %>
     		<h3 class="text-1">
-          <%= link_to short_address(property.address), property %>
+          <%= link_to short_address(property.address), property %><%= " - #{property.status.titleize}" unless property.status.nil? %>
         </h3>
     		<span class="text-2">
           <strong><%= property.neighborhood %></strong>

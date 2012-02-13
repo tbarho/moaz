@@ -1,5 +1,5 @@
 class Property < ActiveRecord::Base
-  attr_accessible :address, :price, :beds, :baths, :sqft, :neighborhood, :description
+  attr_accessible :address, :price, :beds, :baths, :sqft, :neighborhood, :description, :status
 
   has_many :pictures, :as => :imageable, :dependent => :destroy
   has_many :options, :dependent => :destroy
