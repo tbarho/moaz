@@ -8,7 +8,7 @@
 <% for testimonial in @testimonials %>
   <div class="border-bot">
     <p class="text-1">
-      <%= testimonial.person %> says . . . 
+      <%= testimonial.person %> <%= testimonial.person[/and|&/] ? "say" : "says" %> . . . 
     </p>
     <p> about <%= testimonial.address %><br /><%= testimonial.content %></p>
     <% if current_user && current_user.admin? %>
