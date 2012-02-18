@@ -4,7 +4,11 @@ class PagesController < ApplicationController
     render :layout => false
   end
 
-  def about
-    @title = "About"
+  def profile
+    @title = "Company Profile"
+  end
+
+  def amir_bio
+    @title = "About Amir Moazami"
   end
 end

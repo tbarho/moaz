@@ -19,6 +19,8 @@ Moaz::Application.routes.draw do
 
   match 'home' => "pages#home"  
   match '/about', :to => 'pages#about', :via => :get, :as => :about
+  match '/profile', :to => 'pages#profile'
+  match '/amir-bio', :to => 'pages#amir_bio'
 
   resources :properties do
     resources :pictures do
