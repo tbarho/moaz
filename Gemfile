@@ -50,5 +50,5 @@ group :development do
   gem 'mysql2'
   gem 'therubyracer'
   gem 'rspec-rails'
-  gem 'ty-gen', :path => '/var/www/railsprojects/ty-gen'
+#  gem 'ty-gen', :path => '/var/www/railsprojects/ty-gen'
 end

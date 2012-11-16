@@ -10,11 +10,6 @@ GIT
       rails (~> 3.1.0)
       sass-rails
 
-PATH
-  remote: /var/www/railsprojects/ty-gen
-  specs:
-    ty-gen (0.0.7)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -223,5 +218,4 @@ DEPENDENCIES
   therubyracer
   thin
   turn
-  ty-gen!
   uglifier
