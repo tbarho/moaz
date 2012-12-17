@@ -11,4 +11,8 @@ class PagesController < ApplicationController
   def amir_bio
     @title = "About Amir Moazami"
   end
+
+  def contact
+    @title = "Contact Us"
+  end
 end
